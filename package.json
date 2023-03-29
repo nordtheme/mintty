@@ -1,0 +1,46 @@
+{
+  "name": "@nordtheme/mintty",
+  "version": "0.1.0",
+  "description": "An arctic, north-bluish clean and elegant Mintty color theme",
+  "author": {
+    "name": "Sven Greb",
+    "email": "development@svengreb.de",
+    "url": "https://www.svengreb.de"
+  },
+  "homepage": "https://www.nordtheme.com/ports/mintty",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nordtheme/mintty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nordtheme/mintty/issues"
+  },
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=15.13",
+    "npm": ">=7.7"
+  },
+  "scripts": {
+    "format": "run-s format:pretty",
+    "format:pretty": "prettier --ignore-unknown --no-editorconfig --write . .husky/*",
+    "lint": "run-s lint:md lint:pretty",
+    "lint:ci": "run-s lint:md lint:ci:*",
+    "lint:ci:pretty": "prettier --check --ignore-unknown --loglevel silent --no-editorconfig --no-error-on-unmatched-pattern . .husky/*",
+    "lint:md": "remark --no-stdout . \".github/**/*.md\"",
+    "lint:pretty": "prettier --check --ignore-unknown --no-editorconfig . .husky/*",
+    "prepare:husky": "husky install",
+    "prepare": "run-s prepare:*"
+  },
+  "devDependencies": {
+    "@arcticicestudio/remark-preset-lint": ">=0.4.0 <1.0.0",
+    "@prettier/plugin-xml": "2.2.0",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.8.7",
+    "prettier-plugin-properties": "0.2.0",
+    "prettier-plugin-sh": "0.12.8",
+    "remark-cli": "11.0.0"
+  }
+}
